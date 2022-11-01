@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CodeBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Entry">
+          <Key>
+            <PropertyRef Name="entr_Code" />
+          </Key>
+          <Property Name="entr_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="entr_Titre" Type="nvarchar(max)" />
+          <Property Name="entr_Description" Type="nvarchar(max)" />
+          <Property Name="entr_Username" Type="nvarchar(max)" />
+          <Property Name="entr_Password" Type="nvarchar(max)" />
+          <Property Name="entr_Site" Type="nvarchar(max)" />
+          <Property Name="entr_Observation" Type="nvarchar(max)" />
+          <Property Name="entr_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Utilisateur">
+          <Key>
+            <PropertyRef Name="user_Code" />
+          </Key>
+          <Property Name="user_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="user_Username" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="user_Password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Function Name="Delete_Entry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="entr_Code" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Insert_Entry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="entr_Titre" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Description" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Username" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Password" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Site" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Observation" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Date" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="Select_Entry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Select_Entry_By_Code" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="entr_Code" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Update_Entry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="entr_Code" Type="int" Mode="In" />
+          <Parameter Name="entr_Titre" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Description" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Username" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Password" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Site" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="entr_Observation" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="CodeBankModelStoreContainer">
+          <EntitySet Name="Entry" EntityType="Self.Entry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CodeBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Entry">
+          <Key>
+            <PropertyRef Name="entr_Code" />
+          </Key>
+          <Property Name="entr_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="entr_Titre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="entr_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="entr_Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="entr_Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="entr_Site" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="entr_Observation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="entr_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Utilisateur">
+          <Key>
+            <PropertyRef Name="user_Code" />
+          </Key>
+          <Property Name="user_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_Username" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CodeBankEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Entry" EntityType="Self.Entry" />
+          <EntitySet Name="Utilisateur" EntityType="Self.Utilisateur" />
+          <FunctionImport Name="Delete_Entry">
+          <Parameter Name="entr_Code" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Insert_Entry">
+            <Parameter Name="entr_Titre" Mode="In" Type="String" />
+            <Parameter Name="entr_Description" Mode="In" Type="String" />
+            <Parameter Name="entr_Username" Mode="In" Type="String" />
+            <Parameter Name="entr_Password" Mode="In" Type="String" />
+            <Parameter Name="entr_Site" Mode="In" Type="String" />
+            <Parameter Name="entr_Observation" Mode="In" Type="String" />
+            <Parameter Name="entr_Date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="Select_Entry" ReturnType="Collection(CodeBankModel.Select_Entry_Result)" />
+          <FunctionImport Name="Update_Entry">
+            <Parameter Name="entr_Code" Mode="In" Type="Int32" />
+            <Parameter Name="entr_Titre" Mode="In" Type="String" />
+            <Parameter Name="entr_Description" Mode="In" Type="String" />
+            <Parameter Name="entr_Username" Mode="In" Type="String" />
+            <Parameter Name="entr_Password" Mode="In" Type="String" />
+            <Parameter Name="entr_Site" Mode="In" Type="String" />
+            <Parameter Name="entr_Observation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Select_Entry_By_Code" EntitySet="Entry" ReturnType="Collection(CodeBankModel.Entry)">
+          <Parameter Name="entr_Code" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Select_Entry_Result">
+          <Property Type="Int32" Name="entr_Code" Nullable="false" />
+          <Property Type="String" Name="entr_Titre" Nullable="true" />
+          <Property Type="String" Name="entr_Description" Nullable="true" />
+          <Property Type="String" Name="entr_Username" Nullable="true" />
+          <Property Type="String" Name="entr_Password" Nullable="true" />
+          <Property Type="String" Name="entr_Site" Nullable="true" />
+          <Property Type="String" Name="entr_Observation" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Select_Entry_By_Code_Result">
+          <Property Type="String" Name="entr_Titre" Nullable="true" />
+          <Property Type="String" Name="entr_Description" Nullable="true" />
+          <Property Type="String" Name="entr_Username" Nullable="true" />
+          <Property Type="String" Name="entr_Password" Nullable="true" />
+          <Property Type="String" Name="entr_Site" Nullable="true" />
+          <Property Type="String" Name="entr_Observation" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CodeBankModelStoreContainer" CdmEntityContainer="CodeBankEntities">
+          <EntitySetMapping Name="Entry">
+            <EntityTypeMapping TypeName="CodeBankModel.Entry">
+              <MappingFragment StoreEntitySet="Entry">
+                <ScalarProperty Name="entr_Code" ColumnName="entr_Code" />
+                <ScalarProperty Name="entr_Titre" ColumnName="entr_Titre" />
+                <ScalarProperty Name="entr_Description" ColumnName="entr_Description" />
+                <ScalarProperty Name="entr_Username" ColumnName="entr_Username" />
+                <ScalarProperty Name="entr_Password" ColumnName="entr_Password" />
+                <ScalarProperty Name="entr_Site" ColumnName="entr_Site" />
+                <ScalarProperty Name="entr_Observation" ColumnName="entr_Observation" />
+                <ScalarProperty Name="entr_Date" ColumnName="entr_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="CodeBankModel.Entry">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="CodeBankModel.Store.Insert_Entry">
+                  <ScalarProperty Name="entr_Date" ParameterName="entr_Date" />
+                  <ScalarProperty Name="entr_Observation" ParameterName="entr_Observation" />
+                  <ScalarProperty Name="entr_Site" ParameterName="entr_Site" />
+                  <ScalarProperty Name="entr_Password" ParameterName="entr_Password" />
+                  <ScalarProperty Name="entr_Username" ParameterName="entr_Username" />
+                  <ScalarProperty Name="entr_Description" ParameterName="entr_Description" />
+                  <ScalarProperty Name="entr_Titre" ParameterName="entr_Titre" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="CodeBankModel.Store.Update_Entry">
+                  <ScalarProperty Name="entr_Observation" ParameterName="entr_Observation" Version="Current" />
+                  <ScalarProperty Name="entr_Site" ParameterName="entr_Site" Version="Current" />
+                  <ScalarProperty Name="entr_Password" ParameterName="entr_Password" Version="Current" />
+                  <ScalarProperty Name="entr_Username" ParameterName="entr_Username" Version="Current" />
+                  <ScalarProperty Name="entr_Description" ParameterName="entr_Description" Version="Current" />
+                  <ScalarProperty Name="entr_Titre" ParameterName="entr_Titre" Version="Current" />
+                  <ScalarProperty Name="entr_Code" ParameterName="entr_Code" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="CodeBankModel.Store.Delete_Entry">
+                  <ScalarProperty Name="entr_Code" ParameterName="entr_Code" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utilisateur">
+            <EntityTypeMapping TypeName="CodeBankModel.Utilisateur">
+              <MappingFragment StoreEntitySet="Utilisateur">
+                <ScalarProperty Name="user_Code" ColumnName="user_Code" />
+                <ScalarProperty Name="user_Name" ColumnName="user_Name" />
+                <ScalarProperty Name="user_Username" ColumnName="user_Username" />
+                <ScalarProperty Name="user_Password" ColumnName="user_Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Delete_Entry" FunctionName="CodeBankModel.Store.Delete_Entry" />
+          <FunctionImportMapping FunctionImportName="Insert_Entry" FunctionName="CodeBankModel.Store.Insert_Entry" />
+          <FunctionImportMapping FunctionImportName="Select_Entry" FunctionName="CodeBankModel.Store.Select_Entry">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CodeBankModel.Select_Entry_Result">
+                <ScalarProperty Name="entr_Code" ColumnName="entr_Code" />
+                <ScalarProperty Name="entr_Titre" ColumnName="entr_Titre" />
+                <ScalarProperty Name="entr_Description" ColumnName="entr_Description" />
+                <ScalarProperty Name="entr_Username" ColumnName="entr_Username" />
+                <ScalarProperty Name="entr_Password" ColumnName="entr_Password" />
+                <ScalarProperty Name="entr_Site" ColumnName="entr_Site" />
+                <ScalarProperty Name="entr_Observation" ColumnName="entr_Observation" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Update_Entry" FunctionName="CodeBankModel.Store.Update_Entry" />
+          <FunctionImportMapping FunctionImportName="Select_Entry_By_Code" FunctionName="CodeBankModel.Store.Select_Entry_By_Code">
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

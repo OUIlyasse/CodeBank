@@ -1,23 +1,23 @@
-﻿using CodeBank.Main;
+﻿using CodeGenerateur.Main;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CodeBank
+namespace CodeGenerateur
 {
-    internal static class Program
+    static class Program
     {
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
         [STAThread]
-        private static void Main()
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmMainCG());
         }
     }
 }

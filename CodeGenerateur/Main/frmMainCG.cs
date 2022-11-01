@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CodeBank
+namespace CodeGenerateur.Main
 {
-    public partial class Form1 : Form
+    public partial class frmMainCG : Form
     {
-        public Form1()
+        public frmMainCG()
         {
             InitializeComponent();
         }

@@ -31,6 +31,31 @@ namespace CodeBank.Sub
             gcCodes.DataSource = db.Select_Entry();
         }
 
+        public void DeleteData()
+        {
+            DialogResult re = MessageBox.Show("Voulez-vous supprimer cette pièce", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (re == DialogResult.Yes)
+            {
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        string code = gvCodes.GetFocusedRowCellValue("entr_Code").ToString();
+                        db.Delete_Entry(int.Parse(code));
+                        db.SaveChanges();
+                        transaction.Commit();
+                        f.txtStatus.Caption = "Votre code a bien supprimé";
+                        getData();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        f.txtStatus.Caption = ex.Message;
+                    }
+                }
+            }
+        }
+
         #endregion Codes
 
         public frmListCode(frmMain fm)
@@ -42,6 +67,7 @@ namespace CodeBank.Sub
         private void btnNouveau_Click(object sender, EventArgs e)
         {
             frmNew frm = new frmNew(f, this);
+            frm.Text = "Nouveau Code";
             iTools.OpenForm(frm);
         }
 
@@ -68,6 +94,17 @@ namespace CodeBank.Sub
                     f.txtStatus.Caption = ex.Message;
                 }
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteData();
+        }
+
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+
+            txtPass.UseSystemPasswordChar = false;
         }
     }
 }

@@ -32,6 +32,9 @@
             this.gcCodes = new DevExpress.XtraGrid.GridControl();
             this.menu1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnNouveau = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnShowPassword = new System.Windows.Forms.ToolStripMenuItem();
             this.gvCodes = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcTitre = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,7 +45,6 @@
             this.gcURL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtLink = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.gcObservation = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnShowPassword = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.gcCodes)).BeginInit();
             this.menu1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCodes)).BeginInit();
@@ -71,9 +73,11 @@
             this.menu1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNouveau,
+            this.btnDelete,
+            this.toolStripSeparator1,
             this.btnShowPassword});
             this.menu1.Name = "menu1";
-            this.menu1.Size = new System.Drawing.Size(233, 56);
+            this.menu1.Size = new System.Drawing.Size(233, 88);
             // 
             // btnNouveau
             // 
@@ -81,6 +85,26 @@
             this.btnNouveau.Size = new System.Drawing.Size(232, 26);
             this.btnNouveau.Text = "Nouveau";
             this.btnNouveau.Click += new System.EventHandler(this.btnNouveau_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(232, 26);
+            this.btnDelete.Text = "Supprimer";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(229, 6);
+            // 
+            // btnShowPassword
+            // 
+            this.btnShowPassword.Enabled = false;
+            this.btnShowPassword.Name = "btnShowPassword";
+            this.btnShowPassword.Size = new System.Drawing.Size(232, 26);
+            this.btnShowPassword.Text = "Afficher Mot de passe";
+            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
             // 
             // gvCodes
             // 
@@ -176,12 +200,6 @@
             this.gcObservation.Visible = true;
             this.gcObservation.VisibleIndex = 5;
             // 
-            // btnShowPassword
-            // 
-            this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(232, 26);
-            this.btnShowPassword.Text = "Afficher Mot de passe";
-            // 
             // frmListCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -218,5 +236,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gcCode;
         public DevExpress.XtraGrid.GridControl gcCodes;
         private System.Windows.Forms.ToolStripMenuItem btnShowPassword;
+        private System.Windows.Forms.ToolStripMenuItem btnDelete;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

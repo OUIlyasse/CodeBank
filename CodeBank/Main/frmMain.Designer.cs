@@ -37,13 +37,14 @@
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.btnCodeGenerateur = new DevExpress.XtraBars.BarButtonItem();
             this.btnParametre = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDataBase = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.txtStatus = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnDataBase = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMemo = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,9 +65,10 @@
             this.btnNew,
             this.btnCodeGenerateur,
             this.txtStatus,
-            this.btnDataBase});
+            this.btnDataBase,
+            this.btnMemo});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
+            this.barManager1.MaxItemId = 8;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -92,7 +94,8 @@
             this.barSubItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barSubItem1.ItemAppearance.Normal.Options.UseFont = true;
             this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnNew)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnNew),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnMemo)});
             this.barSubItem1.Name = "barSubItem1";
             // 
             // btnNew
@@ -130,12 +133,24 @@
             // btnParametre
             // 
             this.btnParametre.Caption = "&Paramètres";
+            this.btnParametre.Enabled = false;
             this.btnParametre.Id = 2;
             this.btnParametre.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnParametre.ImageOptions.Image")));
             this.btnParametre.ItemAppearance.Normal.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParametre.ItemAppearance.Normal.Options.UseFont = true;
             this.btnParametre.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P));
             this.btnParametre.Name = "btnParametre";
+            // 
+            // btnDataBase
+            // 
+            this.btnDataBase.Caption = "&Base de Donnees";
+            this.btnDataBase.Enabled = false;
+            this.btnDataBase.Id = 6;
+            this.btnDataBase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDataBase.ImageOptions.Image")));
+            this.btnDataBase.ItemAppearance.Normal.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDataBase.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnDataBase.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B));
+            this.btnDataBase.Name = "btnDataBase";
             // 
             // bar3
             // 
@@ -192,17 +207,17 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 534);
             // 
-            // btnDataBase
+            // btnMemo
             // 
-            this.btnDataBase.Caption = "&Base de Donnees";
-            this.btnDataBase.Id = 6;
-            this.btnDataBase.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDataBase.ImageOptions.Image")));
-            this.btnDataBase.ItemAppearance.Normal.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDataBase.ItemAppearance.Normal.Options.UseFont = true;
-            this.btnDataBase.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B));
-            this.btnDataBase.Name = "btnDataBase";
+            this.btnMemo.Caption = "Memo";
+            this.btnMemo.Enabled = false;
+            this.btnMemo.Id = 7;
+            this.btnMemo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnMemo.ItemAppearance.Normal.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemo.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnMemo.Name = "btnMemo";
             // 
-            // frmMaim
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,10 +228,11 @@
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmMaim";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Code Bank";
             this.Load += new System.EventHandler(this.frmMaim_Load);
@@ -242,5 +258,6 @@
         private DevExpress.XtraBars.BarButtonItem btnParametre;
         public DevExpress.XtraBars.BarStaticItem txtStatus;
         private DevExpress.XtraBars.BarButtonItem btnDataBase;
+        private DevExpress.XtraBars.BarButtonItem btnMemo;
     }
 }

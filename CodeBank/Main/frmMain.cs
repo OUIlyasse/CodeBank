@@ -59,6 +59,7 @@ namespace CodeBank.Main
         private void btnNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmNew frm = new frmNew(this, f);
+            frm.Text = "Nouveau Code";
             iTools.OpenForm(frm);
         }
     }

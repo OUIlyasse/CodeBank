@@ -20,6 +20,21 @@ namespace CodeBank.Sub
 
         #region Codes
 
+        public void verifyButton()
+        {
+            if (Text == "Nouveau Code")
+            {
+                newRecord();
+                btnAdd.Enabled = true;
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                btnAdd.Enabled = false;
+                btnUpdate.Enabled = true;
+            }
+        }
+
         public void newRecord()
         {
             txtTitre.Text = string.Empty;
@@ -94,7 +109,7 @@ namespace CodeBank.Sub
                         db.Insert_Entry(txtTitre.Text, txtDescrip.Text, txtUsername.Text, txtPassword.Text, txtURL.Text, txtObserv.Text, DateTime.Now);
                         db.SaveChanges();
                         transaction.Commit();
-                        form.txtStatus.Caption = "Votre code a bien ajoute";
+                        form.txtStatus.Caption = "Votre code a bien ajouté";
                         newRecord();
                         getData();
                     }
@@ -117,6 +132,7 @@ namespace CodeBank.Sub
 
         private void frmNew_Load(object sender, EventArgs e)
         {
+            verifyButton();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -130,9 +146,10 @@ namespace CodeBank.Sub
                         db.Update_Entry(id, txtTitre.Text, txtDescrip.Text, txtUsername.Text, txtPassword.Text, txtURL.Text, txtObserv.Text);
                         db.SaveChanges();
                         transaction.Commit();
-                        form.txtStatus.Caption = "Votre code a bien modifie";
+                        form.txtStatus.Caption = "Votre code a bien modifié";
                         newRecord();
                         getData();
+                        Close();
                     }
                     catch (Exception ex)
                     {

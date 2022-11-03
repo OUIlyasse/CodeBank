@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>received_1792871477735524.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -163,6 +166,7 @@
       <DependentUpon>CodeBank.edmx</DependentUpon>
       <LastGenOutput>CodeBank.cs</LastGenOutput>
     </Content>
+    <Content Include="received_1792871477735524.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeGenerateur\CodeGenerateur.csproj">

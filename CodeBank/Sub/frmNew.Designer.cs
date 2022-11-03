@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNew));
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtTitre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -40,7 +41,6 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtUsername = new DevExpress.XtraEditors.TextEdit();
-            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.txtRepeat = new DevExpress.XtraEditors.TextEdit();
             this.txtDescrip = new DevExpress.XtraEditors.MemoEdit();
             this.txtObserv = new DevExpress.XtraEditors.MemoEdit();
@@ -51,9 +51,9 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.ckbShow = new DevExpress.XtraEditors.CheckEdit();
             this.vpValidate = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRepeat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescrip.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObserv.Properties)).BeginInit();
@@ -61,6 +61,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.ckbShow.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vpValidate)).BeginInit();
             this.SuspendLayout();
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(167, 195);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Properties.Appearance.Options.UseFont = true;
+            this.txtPassword.Properties.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(343, 28);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.EditValueChanged += new System.EventHandler(this.txtPassword_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -80,9 +91,9 @@
             this.txtTitre.Properties.Appearance.Options.UseFont = true;
             this.txtTitre.Size = new System.Drawing.Size(343, 28);
             this.txtTitre.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Ce champ est vide";
-            this.vpValidate.SetValidationRule(this.txtTitre, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Ce champ est vide";
+            this.vpValidate.SetValidationRule(this.txtTitre, conditionValidationRule1);
             // 
             // labelControl2
             // 
@@ -143,17 +154,6 @@
             this.txtUsername.Size = new System.Drawing.Size(343, 28);
             this.txtUsername.TabIndex = 3;
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(167, 195);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Properties.Appearance.Options.UseFont = true;
-            this.txtPassword.Properties.UseSystemPasswordChar = true;
-            this.txtPassword.Size = new System.Drawing.Size(343, 28);
-            this.txtPassword.TabIndex = 4;
-            this.txtPassword.EditValueChanged += new System.EventHandler(this.txtPassword_EditValueChanged);
-            // 
             // txtRepeat
             // 
             this.txtRepeat.Location = new System.Drawing.Point(167, 236);
@@ -163,10 +163,10 @@
             this.txtRepeat.Properties.UseSystemPasswordChar = true;
             this.txtRepeat.Size = new System.Drawing.Size(343, 28);
             this.txtRepeat.TabIndex = 6;
-            compareAgainstControlValidationRule2.CaseSensitive = true;
-            compareAgainstControlValidationRule2.Control = this.txtPassword;
-            compareAgainstControlValidationRule2.ErrorText = "This value is not valid";
-            this.vpValidate.SetValidationRule(this.txtRepeat, compareAgainstControlValidationRule2);
+            compareAgainstControlValidationRule1.CaseSensitive = true;
+            compareAgainstControlValidationRule1.Control = this.txtPassword;
+            compareAgainstControlValidationRule1.ErrorText = "This value is not valid";
+            this.vpValidate.SetValidationRule(this.txtRepeat, compareAgainstControlValidationRule1);
             // 
             // txtDescrip
             // 
@@ -285,16 +285,16 @@
             this.Controls.Add(this.labelControl1);
             this.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nouveau Code";
             this.Load += new System.EventHandler(this.frmNew_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTitre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRepeat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescrip.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObserv.Properties)).EndInit();
